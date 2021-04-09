@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=", initial-scale=1.0">
+    <title>Chat Bot</title>
+    <link rel="stylesheet" type= "text/css" href="../static/styles/chatbot.css">
+    <script src="../static/js/chatbot.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form action="http://localhost:5000/result" method="POST">
+            <div class="chat">
+                <div class="contact bar">
+                <div class="pic university"></div>
+                <div class="name">
+                    Bot
+                </div>
+                <div class="seen">
+                    Online
+                </div>
+                </div>
+                <div class="messages" id="chat">
+            
+                {% for key,value in result%}
+                    <div class="{{key}}">
+                    {{value}}
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="input">
+                <i class="fas fa-camera"></i><i class="far fa-laugh-beam"></i><input placeholder="Type your message here!" type="text" name="msg" /><i class="fas fa-microphone"></i>
+                </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

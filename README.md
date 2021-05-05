@@ -20,14 +20,20 @@ https://drive.google.com/drive/folders/1ow98IeMDksYGbL_cpeGJnIq1tdb7ZsaU?usp=sha
 The same can also be clone using web scraping tools such as Httrack.
 
 Place the downloaded folder in the parent folder outside the Project_Flask_App folder.
+
 The directory tree should be something like this:
+	
 	Web_Tech_Lab_Project
+		
 		->Project_Flask_App
+		
 		->Chatbot, this is the folder containing the cloned website
+		
 		->Other files and folders
 
-If this tree is not maintained, 
-then additional configurations need to be done for static file path in flask app, i.e the app.py file.
+If this tree is not maintained, then additional configurations need to be done for static file path in flask app, i.e the app.py file.
+
 The static_path = '../Website/Unigoa_website_clone/www.unigoa.ac.in/' path should be properly configured.
+
 Otherwise rendering issues for css, js and other files for the cloned website does not work properly.
 

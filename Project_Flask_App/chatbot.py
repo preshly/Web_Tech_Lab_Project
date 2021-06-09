@@ -1,26 +1,26 @@
-# import os
 
-# from flask import Flask, render_template, request, jsonify, Response, request
-# # from chatterbot import chatterbot
-# # from chatterbot.trainers import ChatterBotCorpusTrainer
+#############################
+#                           #
+##      chatbot            ##
+##  flask and chatterbot   ##
+#                           #
+#############################
 
-# static_path = 'university/www.unigoa.ac.in'
-
-# app = Flask(__name__, template_folder = static_path,static_folder = static_path, static_url_path = '')
-
-# @app.route('/')
-# def homepage():
-#     return render_template('index.html')
-# if __name__ == '__main__':
-#     app.run()
-
-
+#import necessary packages
 from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.trainers import ListTrainer
-from flask_ngrok import run_with_ngrok
 import os
+
+#import courses conversations
+from courses_conserv import courses_conversation, bachelors_courses_conversation
+from courses_conserv import master_courses_conversation, mphil_courses_conversation
+from courses_conserv import pgdiploma_courses_conversation, doctoral_courses_conversation
+
+#importing class to convert text to links
+from link_resolver import LinkResolver
+
 
 try:
 	os.remove("db.sqlite3")
@@ -31,7 +31,10 @@ except:
 filenumber=int(os.listdir('saved_conversations')[-1])
 filenumber=filenumber+1
 file= open('saved_conversations/'+str(filenumber),"w+")
-file.write('bot : Hello Im university bot. How can I help you?\n')
+initial_message = 'Hello Im university bot. How can I help you?'
+
+
+file.write('bot : ' + initial_message + '\n')
 file.close()
 
 bot = ChatBot(
@@ -65,23 +68,34 @@ demo = [
 
 ]
 
-# bot = ChatBot("Chatterbot")
 trainer = ListTrainer(bot)
 trainer.train(conversation)
 trainer.train(demo)
 
+#training the chatbot with the courses conservation
+trainer.train(courses_conversation)
+trainer.train(bachelors_courses_conversation)
+trainer.train(master_courses_conversation)
+trainer.train(doctoral_courses_conversation)
+trainer.train(mphil_courses_conversation)
+trainer.train(pgdiploma_courses_conversation)
+
 static_path = 'university/www.unigoa.ac.in'
 
 app = Flask(__name__, template_folder = static_path,static_folder = static_path, static_url_path = '')
-run_with_ngrok(app)
+
+link_resolver = LinkResolver()
+
+
+#flask app functions
 
 @app.route("/")
 def index():
-    return render_template("index.html") #to send context to html
+    return render_template("index.html") #starting page
 
 @app.route("/get")
 def get_bot_response():
-    userText = request.args.get("msg") #get data from input,we write js  to index.html
+    userText = request.args.get("msg") #get data from input
     response = str(bot.get_response(userText))
     appendfile=os.listdir('saved_conversations')[-1]
     appendfile= open('saved_conversations/'+str(filenumber),"a")
@@ -89,8 +103,19 @@ def get_bot_response():
     appendfile.write('bot : '+response+'\n')
     appendfile.close()
 
-    return response
 
+    if userText == 'Can you provide more information about Study India Programmme?' \
+        or userText == 'Tell me more about Study Japan Programmme' \
+        or userText == 'Can you provide more information about the bachelor programme?' \
+        or userText == 'Provide more information about the master programme' \
+        or userText == 'Tell more things in MPhil' \
+        or userText == 'Give more information about doctoral programme' \
+        or userText == 'Give more information about PG Diploma':
+        resolved_link = link_resolver.resolve_link(response)
+        
+        return resolved_link
+    
+    return response
 
 
 if __name__ == "__main__":

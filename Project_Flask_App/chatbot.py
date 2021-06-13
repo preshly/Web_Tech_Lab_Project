@@ -1,26 +1,35 @@
+# import os
 
-#############################
-#                           #
-##      chatbot            ##
-##  flask and chatterbot   ##
-#                           #
-#############################
+# from flask import Flask, render_template, request, jsonify, Response, request
+# # from chatterbot import chatterbot
+# # from chatterbot.trainers import ChatterBotCorpusTrainer
 
-#import necessary packages
+# static_path = 'university/www.unigoa.ac.in'
+
+# app = Flask(__name__, template_folder = static_path,static_folder = static_path, static_url_path = '')
+
+# @app.route('/')
+# def homepage():
+#     return render_template('index.html')
+# if __name__ == '__main__':
+#     app.run()
+
+import sys
+
 from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.trainers import ListTrainer
+#from flask_ngrok import run_with_ngrok
 import os
 
-#import courses conversations
+from admin_conversation import chancellor_conversation, dean_conversation, vice_chancellor_conversation, registrar_conversation, general_conversation
+
 from courses_conserv import courses_conversation, bachelors_courses_conversation
 from courses_conserv import master_courses_conversation, mphil_courses_conversation
 from courses_conserv import pgdiploma_courses_conversation, doctoral_courses_conversation
 
-#importing class to convert text to links
 from link_resolver import LinkResolver
-
 
 try:
 	os.remove("db.sqlite3")
@@ -31,10 +40,7 @@ except:
 filenumber=int(os.listdir('saved_conversations')[-1])
 filenumber=filenumber+1
 file= open('saved_conversations/'+str(filenumber),"w+")
-initial_message = 'Hello Im university bot. How can I help you?'
-
-
-file.write('bot : ' + initial_message + '\n')
+file.write('bot : Hello Im university bot. How can I help you?\n')
 file.close()
 
 bot = ChatBot(
@@ -53,26 +59,25 @@ trainer = ListTrainer(bot)
 
 conversation = [
     "Hello",
-    "Hi there! What can I do for you?",
+    "Hi there! This is University chatbot. What can I do for you?",
     "Hi",
-    "Hi! How can I help you?",
+    "Hi! This is University chatbot. How can I help you?",
     "How are you doing?",
     "I'm doing great.",
     "That is good to hear",
     "Thank you."
 ]
 
-demo = [
-    "hello mca",
-    "welcome to mca",
-
-]
-
+# bot = ChatBot("Chatterbot")
 trainer = ListTrainer(bot)
 trainer.train(conversation)
-trainer.train(demo)
 
 #training the chatbot with the courses conservation
+trainer.train(general_conversation)
+trainer.train(chancellor_conversation)
+trainer.train(vice_chancellor_conversation)
+trainer.train(registrar_conversation)
+trainer.train(dean_conversation)
 trainer.train(courses_conversation)
 trainer.train(bachelors_courses_conversation)
 trainer.train(master_courses_conversation)
@@ -86,8 +91,7 @@ app = Flask(__name__, template_folder = static_path,static_folder = static_path,
 
 link_resolver = LinkResolver()
 
-
-#flask app functions
+#run_with_ngrok(app)
 
 @app.route("/")
 def index():
@@ -95,14 +99,21 @@ def index():
 
 @app.route("/get")
 def get_bot_response():
+    actResponse = ''
     userText = request.args.get("msg") #get data from input
     response = str(bot.get_response(userText))
-    appendfile=os.listdir('saved_conversations')[-1]
-    appendfile= open('saved_conversations/'+str(filenumber),"a")
+    # print(response, file=sys.stderr)
+    # if(response[0] == '$'):
+    #     resp = response.split("$")
+    #     actResponse = getContent(resp[2],resp[2])
+    #     app.logger.info(actResponse)
+    # else:
+    #     actResponse = response
+    appendfile = os.listdir('saved_conversations')[-1]
+    appendfile = open('saved_conversations/'+str(filenumber),"a")
     appendfile.write('user : '+userText+'\n')
     appendfile.write('bot : '+response+'\n')
     appendfile.close()
-
 
     if userText == 'Can you provide more information about Study India Programmme?' \
         or userText == 'Tell me more about Study Japan Programmme' \
@@ -112,10 +123,15 @@ def get_bot_response():
         or userText == 'Give more information about doctoral programme' \
         or userText == 'Give more information about PG Diploma':
         resolved_link = link_resolver.resolve_link(response)
-        
         return resolved_link
-    
+
     return response
+
+# @app.route("/getValue")
+# def get_value():
+#     value = ''
+#     html = request.args.get("html")
+#     # incomplete
 
 
 if __name__ == "__main__":

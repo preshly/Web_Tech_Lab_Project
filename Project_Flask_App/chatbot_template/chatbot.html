@@ -23,6 +23,14 @@
             color: #787878;
         }
 
+        body span a:link{
+            color: rgb(60, 255, 0);
+        }
+
+        body span a:visited{
+            color: rgb(217, 255, 0);
+        }
+
         .chat-screen {
             position: fixed;
             bottom: 68px;
@@ -53,7 +61,7 @@
 
         .chat-screen .chat-header .chat-header-title {
             display: inline-block;
-            width: 100%;
+            width: calc(100% - 50px);
             color: #fff;
             font-size: 14px;
         }
@@ -65,8 +73,8 @@
             max-height: 382px;
             background: #ecebeb;
             overflow-y: scroll;
-            /*width: 100%;*/
             width: 100%;
+            
         }
 
         .chat-screen .chat-body .chat-start {
@@ -224,12 +232,6 @@
 
         <!-- <div class="chat-body hide" id="chatbox"> -->
         <div class="chat-body " id="chatbox">
-            <p class="chat-bubble you"><span>Hello Im University Bot How can I help you?</span>
-                <button onclick='buttonAction(this)'>Administrative information</button>
-                <button onclick='buttonAction(this)'>Program details</button>
-                <button onclick='buttonAction(this)'>Department details</button>
-                <button onclick='buttonAction(this)'>College Details</button>
-            </p>
         </div>
         <!-- <div class="chat-input hide"> -->
         <div class="chat-input ">
@@ -271,25 +273,15 @@
             }
         }
 
-        function buttonAction(button){
-            var button_msg = button.innerHTML;
-            getBotReply(button_msg)
-        }
-
-        function sendMessage(){
+        function getBotReply() {
             var inp_msg = $('#input_msg').val();
-            getBotReply(inp_msg)
-        }
-
-        function getBotReply(input) {
-            // var inp_msg = $('#input_msg').val();
-            var userHtml = '<p class="chat-bubble me"><span>' + input + "</span></p>";
+            var userHtml = '<p class="chat-bubble me"><span>' + inp_msg + "</span></p>";
             $("#input_msg").val("");
             $("#chatbox").append(userHtml);
 
             userMessages.push(userHtml);
 
-            $.get("/get", { msg: input }, function (data) {
+            $.get("/get", { msg: inp_msg }, function (data) {
 
                 var botHtml = '<p class="chat-bubble you"><span>' + data + "</span></p>";
 
@@ -314,12 +306,12 @@
 
         }
 
-        $("#send_button").click(sendMessage);
+        $("#send_button").click(getBotReply);
 
         $("#input_msg").keypress(function (e) {
 
             if (e.which == 13) {
-                sendMessage();
+                getBotReply();
             }
 
         });

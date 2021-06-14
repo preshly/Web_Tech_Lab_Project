@@ -17,8 +17,7 @@ courses_conversation = [
         in English, Indian Culture through Languages and Literature; India\'s History and Philosophy, etc.',
     
     'Can you provide more information about Study India Programmme?',
-    "Check this link: <a href='academics/a/programmes/study-india-programme.html' \
-                target='_blank'> Study India Programme </a>",
+    "Check this link: <a href='/academics/a/programmes/study-india-programme.html'> Study India Programme </a>",
     
     
     'Can you tell me about the Study Japan Programmme?',
@@ -26,8 +25,7 @@ courses_conversation = [
         students study modules on Japanese society, culture, business and communications.',
     
     'Tell me more about Study Japan Programmme',
-    "Check this link: <a href='academics/a/programmes/study-japan-programme.html' \
-                target='_blank'> Study Japan Programme </a>",
+    "Check this link: <a href='/academics/a/programmes/study-japan-programme.html'> Study Japan Programme </a>",
 
 ]
 
@@ -50,8 +48,7 @@ bachelors_courses_conversation = [
     'Library and Information Sciences (BLISC), Education, Management, Design, Fine Arts, Vocatioan.',
 
     'Can you provide more information about the bachelor programme?',
-    "Check this link: <a href='academics/programmes/bachelors.html' \
-                target='_blank'> Bachelors Programme </a>",
+    "Check this link: <a href='/academics/programmes/bachelors.html' > Bachelors Programme </a>",
 ]
 
 master_courses_conversation = [
@@ -74,8 +71,7 @@ master_courses_conversation = [
     'Yes. There is MBA, Travel and Tourism Management and Integrated MBA',
         
     'Provide more information about the master programme',
-    "Check this link: <a href='academics/programmes/masters.html' \
-                target='_blank'> Master's Programme </a>",
+    "Check this link: <a href='/academics/programmes/masters.html' > Master's Programme </a>",
 
 ]
 
@@ -88,8 +84,7 @@ mphil_courses_conversation = [
     'Biotechnology, Botany, English, Computer Science, Mathematics, Physics.',
 
     'Tell more things in MPhil',
-    "Check this link: <a href='academics/programmes/masters-of-philosophy.html' \
-                target='_blank'> MPhil Programme </a>",
+    "Check this link: <a href='/academics/programmes/masters-of-philosophy.html'> MPhil Programme </a>",
 ]
 
 doctoral_courses_conversation = [
@@ -98,8 +93,7 @@ doctoral_courses_conversation = [
         Chemistry, Commerce, Computer Science, Mathematics, Physics.',
 
     'Give more information about doctoral programme',
-    "Check this link: <a href='academics/programmes/doctoral-programmes.html' \
-                target='_blank'> Doctoral Programme </a>",
+    "Check this link: <a href='/academics/programmes/doctoral-programmes.html'> Doctoral Programme </a>",
 ]
 
 pgdiploma_courses_conversation = [
@@ -107,8 +101,7 @@ pgdiploma_courses_conversation = [
     'Medicine, Management Studies and other branches like Agriculture, Computer Applications, etc.',
 
     'Give more information about PG Diploma',
-    "Check this link: <a href='academics/programmes/pg-diploma.html' \
-                target='_blank'> PG Diploma Programme </a>",
+    "Check this link: <a href='/academics/programmes/pg-diploma.html'> PG Diploma Programme </a>",
 ]
 
 

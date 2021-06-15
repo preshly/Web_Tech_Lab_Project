@@ -31,7 +31,7 @@ function sendMessage(){
 
 function getBotReply(input) {
     // var inp_msg = $('#input_msg').val();
-    var userHtml = '<p class="chat-bubble me"><span>' + input + "</span></p>";
+    var userHtml = chatBubble('me',input);
     $("#input_msg").val("");
     $("#chatbox").append(userHtml);
 
@@ -39,7 +39,7 @@ function getBotReply(input) {
 
     $.get("/get", { msg: input }, function (data) {
 
-        var botHtml = '<p class="chat-bubble you"><span>' + data + "</span></p>";
+        var botHtml = chatBubble('you',data);
 
         $("#chatbox").append(botHtml);
         botMessages.push(botHtml);
@@ -60,6 +60,20 @@ function getBotReply(input) {
 
     });
 
+}
+
+function chatBubble(type,data){
+    let el_p = document.createElement('p');
+    el_p.classList.add("chat-bubble");
+    el_p.classList.add(type);
+
+    let el_span = document.createElement('span');
+    el_span.innerHTML = data;
+
+    $(el_span).find('button').addClass('btn btn-info custom');
+    el_p.append(el_span);
+
+    return el_p;
 }
 
 $("#send_button").click(sendMessage);

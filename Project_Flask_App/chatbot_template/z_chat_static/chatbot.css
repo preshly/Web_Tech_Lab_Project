@@ -24,6 +24,10 @@ body span a:visited{
     color: rgb(217, 255, 0);
 }
 
+.custom{ 
+    border-radius: 10px;
+    width: 200px !important;
+}
 
 .chat-screen {
     position: fixed;
@@ -102,8 +106,15 @@ body span a:visited{
     color: #fff;
     border-radius: 0 8px 8px 8px;
     align-self: flex-start;
-    display: table;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 1px solid black;
+
+}
+
+.chat-screen .chat-body .chat-bubble.you button{
+    margin-top: 10px;
 }
 
 .chat-screen .chat-body .chat-bubble.me {

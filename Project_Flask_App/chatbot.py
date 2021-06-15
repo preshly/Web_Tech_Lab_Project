@@ -20,8 +20,12 @@ from department_convers import department_conversation
 from examination_conv import apply_for_conversations, convocation_conversations
 from admission_conv import admission_notices_converstion
 
+from contact_conv import contact_conversations,email_conversations
+
+from academic_matter_conv import eligibility_conversations,migration_conversations,transcripts_conversations
+
 #importing class to convert text to links
-from link_resolver import LinkResolver
+#from link_resolver import LinkResolver
 
 try:
 	os.remove("db.sqlite3")
@@ -81,11 +85,29 @@ trainer.train(convocation_conversations)
 #training the chatbot with the admission_notices_converstion
 trainer.train(admission_notices_converstion)
 
+#training the chatbot with the eligibility_conversations
+trainer.train(eligibility_conversations)
+
+#training the chatbot with the migration_conversations
+trainer.train(migration_conversations)
+
+#training the chatbot with the transcripts_conversations
+trainer.train(transcripts_conversations)
+
+#training the chatbot with the contact_conversation
+trainer.train(contact_conversations)
+
+#training the chatbot with the email_conversation
+trainer.train(email_conversations)
+
+
+
+
 static_path = 'university/www.unigoa.ac.in'
 
 app = Flask(__name__, template_folder = static_path,static_folder = static_path, static_url_path = '')
 
-link_resolver = LinkResolver()
+#link_resolver = LinkResolver()
 
 messages_with_links = ['Can you provide more information about Study India Programmme?', 
         'Tell me more about Study Japan Programmme', 

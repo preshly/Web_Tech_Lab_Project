@@ -46,9 +46,10 @@ department_conversation = [
         HOD: Associate Professor of Computer Science and Technology Yma F. Pinto; <br /> \
             Year of Establishment: 1965(CPIR); <br /> Office contact: +91-8669609114; <br /> ',
     
+    #All
     'All Departments',
     "You can check out the information of all the departments from here: \
-        <a href='goa-university-department-listings.html'> Goa University Departments and Schools </a> ",
+        <a href='/goa-university-department-listings.html'> Goa University Departments and Schools </a> ",
 
     # chemical sciences
     'Give information of school of chemical sciences',

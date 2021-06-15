@@ -53,8 +53,12 @@ courses_conversation = [
         in English, Indian Culture through Languages and Literature; India\'s History and Philosophy, etc.',
     
     'Can you provide more information about Study India Programmme?',
+<<<<<<< HEAD
     "Check this link: <a href='academics/a/programmes/study-india-programme.html' \
                 > Study India Programme </a>",
+=======
+    "Check this link: <a href='/academics/a/programmes/study-india-programme.html'> Study India Programme </a>",
+>>>>>>> 910cd5d7bd9c91fa0bcc7063ab150a51104d86cd
     
     
     'Can you tell me about the Study Japan Programmme?',
@@ -62,8 +66,12 @@ courses_conversation = [
         students study modules on Japanese society, culture, business and communications.',
     
     'Tell me more about Study Japan Programmme',
+<<<<<<< HEAD
     "Check this link: <a href='academics/a/programmes/study-japan-programme.html' \
                 > Study Japan Programme </a>",
+=======
+    "Check this link: <a href='/academics/a/programmes/study-japan-programme.html'> Study Japan Programme </a>",
+>>>>>>> 910cd5d7bd9c91fa0bcc7063ab150a51104d86cd
 
 ]
 
@@ -86,6 +94,7 @@ bachelors_courses_conversation = [
     'Library and Information Sciences (BLISC), Education, Management, Design, Fine Arts, Vocatioan.',
 
     'Can you provide more information about the bachelor programme?',
+<<<<<<< HEAD
     "Check this link: <a href='academics/programmes/bachelors.html' \
                 > Bachelors Programme </a>",
 
@@ -139,6 +148,9 @@ bachelors_courses_conversation = [
             <a href='http://www.caculocollege.ac.in/' \
                 target='_blank' > Saraswat Vidyalaya's Sridora Caculo College of Commerce & Management Studies</a>",
 
+=======
+    "Check this link: <a href='/academics/programmes/bachelors.html' > Bachelors Programme </a>",
+>>>>>>> 910cd5d7bd9c91fa0bcc7063ab150a51104d86cd
 ]
 
 master_courses_conversation = [
@@ -161,8 +173,12 @@ master_courses_conversation = [
     'Yes. There is MBA, Travel and Tourism Management and Integrated MBA',
         
     'Provide more information about the master programme',
+<<<<<<< HEAD
     "Check this link: <a href='academics/programmes/masters.html' \
                 > Master's Programme </a>",
+=======
+    "Check this link: <a href='/academics/programmes/masters.html' > Master's Programme </a>",
+>>>>>>> 910cd5d7bd9c91fa0bcc7063ab150a51104d86cd
 
 ]
 
@@ -175,8 +191,12 @@ mphil_courses_conversation = [
     'Biotechnology, Botany, English, Computer Science, Mathematics, Physics.',
 
     'Tell more things in MPhil',
+<<<<<<< HEAD
     "Check this link: <a href='academics/programmes/masters-of-philosophy.html' \
                 > MPhil Programme </a>",
+=======
+    "Check this link: <a href='/academics/programmes/masters-of-philosophy.html'> MPhil Programme </a>",
+>>>>>>> 910cd5d7bd9c91fa0bcc7063ab150a51104d86cd
 ]
 
 doctoral_courses_conversation = [
@@ -185,8 +205,12 @@ doctoral_courses_conversation = [
         Chemistry, Commerce, Computer Science, Mathematics, Physics.',
 
     'Give more information about doctoral programme',
+<<<<<<< HEAD
     "Check this link: <a href='academics/programmes/doctoral-programmes.html' \
                 > Doctoral Programme </a>",
+=======
+    "Check this link: <a href='/academics/programmes/doctoral-programmes.html'> Doctoral Programme </a>",
+>>>>>>> 910cd5d7bd9c91fa0bcc7063ab150a51104d86cd
 ]
 
 pgdiploma_courses_conversation = [
@@ -194,8 +218,12 @@ pgdiploma_courses_conversation = [
     'Medicine, Management Studies and other branches like Agriculture, Computer Applications, etc.',
 
     'Give more information about PG Diploma',
+<<<<<<< HEAD
     "Check this link: <a href='academics/programmes/pg-diploma.html' \
                 > PG Diploma Programme </a>",
+=======
+    "Check this link: <a href='/academics/programmes/pg-diploma.html'> PG Diploma Programme </a>",
+>>>>>>> 910cd5d7bd9c91fa0bcc7063ab150a51104d86cd
 ]
 
 

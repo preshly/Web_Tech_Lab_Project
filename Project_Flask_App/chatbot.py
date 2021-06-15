@@ -7,10 +7,12 @@ import os
 
 #import conversations
 
-from admin_conversation import chancellor_conversation, dean_conversation, vice_chancellor_conversation, registrar_conversation, general_conversation,finance_officer_conversation
+from greetings_convers import general_conversation
+
+from admin_conversation import chancellor_conversation, dean_conversation, vice_chancellor_conversation, registrar_conversation, general_admin_conversation, finance_officer_concersation
 
 from greetings_convers import greetings_conversation
-from courses_conserv import courses_conversation, bachelors_courses_conversation, \
+from courses_conserv import courses_conversation, bachelors_courses_conversation,general_course_conversation, \
     master_courses_conversation, mphil_courses_conversation, pgdiploma_courses_conversation, \
     doctoral_courses_conversation
 
@@ -19,6 +21,8 @@ from examination_conv import apply_for_conversations, convocation_conversations
 from admission_conv import admission_notices_converstion
 
 from contact_conv import contact_conversations,email_conversations
+
+from college_convo import genral_college_conversation, general_edu_institution_convo, professional_edu_institution_convo, recognised_edu_institution_convo
 
 from academic_matter_conv import eligibility_conversations,migration_conversations,transcripts_conversations
 
@@ -54,16 +58,24 @@ bot = ChatBot(
 trainer = ListTrainer(bot)
 
 #training the chatbot with the greetings_conversation
+trainer.train(general_conversation)
+
 trainer.train(greetings_conversation)
 
-trainer.train(general_conversation)
+trainer.train(genral_college_conversation)
+trainer.train(general_edu_institution_convo)
+trainer.train(professional_edu_institution_convo)
+trainer.train(recognised_edu_institution_convo)
+
+trainer.train(general_admin_conversation)
 trainer.train(chancellor_conversation)
 trainer.train(vice_chancellor_conversation)
 trainer.train(registrar_conversation)
 trainer.train(dean_conversation)
-trainer.train(finance_officer_conversation)
+trainer.train(finance_officer_concersation)
 
 #training the chatbot with the courses conservation
+trainer.train(general_course_conversation)
 trainer.train(courses_conversation)
 trainer.train(bachelors_courses_conversation)
 trainer.train(master_courses_conversation)
@@ -103,8 +115,6 @@ static_path = 'university/www.unigoa.ac.in'
 
 app = Flask(__name__, template_folder = static_path,static_folder = static_path, static_url_path = '')
 
-#link_resolver = LinkResolver()
-
 messages_with_links = ['Can you provide more information about Study India Programmme?', 
         'Tell me more about Study Japan Programmme', 
         'Can you provide more information about the bachelor programme?', 
@@ -123,31 +133,13 @@ def get_bot_response():
     actResponse = ''
     userText = request.args.get("msg") #get data from input
     response = str(bot.get_response(userText))
-    # print(response, file=sys.stderr)
-    # if(response[0] == '$'):
-    #     resp = response.split("$")
-    #     actResponse = getContent(resp[2],resp[2])
-    #     app.logger.info(actResponse)
-    # else:
-    #     actResponse = response
     appendfile = os.listdir('saved_conversations')[-1]
     appendfile = open('saved_conversations/'+str(filenumber),"a")
     appendfile.write('user : '+userText+'\n')
     appendfile.write('bot : '+response+'\n')
     appendfile.close()
 
-    if userText in messages_with_links:
-        resolved_link = link_resolver.resolve_link(response)      
-        return resolved_link
-
     return response
-
-# @app.route("/getValue")
-# def get_value():
-#     value = ''
-#     html = request.args.get("html")
-#     # incomplete
-
 
 if __name__ == "__main__":
     app.run()

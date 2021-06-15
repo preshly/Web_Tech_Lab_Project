@@ -1,5 +1,5 @@
 <!-- chatbot style -->
-<!-- BEGIN GLOBAL MANDATORY STYLES -->
+
 <!DOCTYPE html>
 <html>
 
@@ -7,223 +7,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- <link href="css/main.css" rel="stylesheet" type="text/css" /> -->
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- <link href="css/select2.min.css" rel="stylesheet" type="text/css"/>
-    <link href="css/chatBot.css" rel="stylesheet" type="text/css"/>
-    <link href="css/timeline.css" rel="stylesheet" type="text/css"/> -->
 
-    <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            background: #fafafa;
-            color: #787878;
-        }
+    <link href='/z_chat_static/chatbot.css' rel='stylesheet' />
+    <script src='/z_chat_static/chatbot.js' defer='defer'></script>
 
-        body span a:link{
-            color: rgb(60, 255, 0);
-        }
-        
-        .buttonLink a:link{
-            color: black;
-        }
-        
-        .buttonLink a:visited{
-            color: blue;
-        }
+    <style>    </style>
 
-        body span a:visited{
-            color: rgb(217, 255, 0);
-        }
-
-        .chat-screen {
-            position: fixed;
-            bottom: 68px;
-            right: 20px;
-            z-index: 9999;
-            width: 350px;
-            background: #fff;
-            box-sizing: border-box;
-            border-radius: 15px;
-            box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
-            visibility: hidden;
-        }
-
-        .chat-screen.show-chat {
-            -moz-transition: bottom 0.5s linear;
-            -webkit-transition: bottom 0.5s linear;
-            transition: bottom 0.5s linear;
-            visibility: visible;
-            bottom: 82px;
-        }
-
-        .chat-screen .chat-header {
-            background-image: linear-gradient(to right, #01579B, #0277bd, #0288D1, #039BE5, #03A9F4);
-            border-radius: 15px 15px 0 0;
-            padding: 15px;
-            display: block;
-        }
-
-        .chat-screen .chat-header .chat-header-title {
-            display: inline-block;
-            width: calc(100% - 50px);
-            color: #fff;
-            font-size: 14px;
-        }
-
-        .chat-screen .chat-body {
-            padding: 25px;
-            display: inline-block;
-            min-height: 382px;
-            max-height: 382px;
-            background: #ecebeb;
-            overflow-y: scroll;
-            width: 100%;
-            
-        }
-
-        .chat-screen .chat-body .chat-start {
-            border: 1px solid #f8d4ff;
-            width: 150px;
-            border-radius: 50px;
-            padding: 5px 10px;
-            font-size: 12px;
-            margin: 0 auto;
-            text-align: center;
-            margin-bottom: 15px;
-            background: #fff;
-        }
-
-        .chat-screen .chat-body .chat-bubble {
-            font-size: 14px;
-            padding: 8px 13px;
-            box-shadow: none;
-            display: inline-block;
-            clear: both;
-            margin-bottom: 8px;
-            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.02);
-        }
-
-        .chat-screen .chat-body .chat-bubble.you {
-            background-image: linear-gradient(to right, #01579B, #0277bd, #0288D1, #039BE5, #03A9F4);
-            color: #fff;
-            border-radius: 0 8px 8px 8px;
-            align-self: flex-start;
-            display: table;
-        }
-
-        .chat-screen .chat-body .chat-bubble.me {
-            background-image: linear-gradient(to right, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
-            color: black;
-            border-radius: 8px 0px 8px 8px;
-            float: right;
-            align-self: flex-end;
-            display: table;
-        }
-
-        .chat-screen .chat-input {
-            width: 100%;
-            position: relative;
-            margin-bottom: -5px;
-        }
-
-        .chat-screen .chat-input input {
-            width: 100%;
-            background: #ffffff;
-            padding: 15px 70px 15px 15px;
-            border-radius: 0 0 15px 15px;
-            resize: none;
-            border-width: 1px 0 0 0;
-            border-style: solid;
-            border-color: #f8f8f8;
-            color: black;
-            font-weight: normal;
-            font-size: 13px;
-            transition: border-color 0.5s ease;
-        }
-
-        .chat-screen .chat-input input:focus {
-            border-color: #f9dcff;
-        }
-
-        .chat-screen .chat-input input:focus+.input-action-icon a svg.feather-send {
-            color: #0277bd;
-        }
-
-        .chat-screen .chat-input .input-action-icon {
-            width: 61px;
-            white-space: nowrap;
-            position: absolute;
-            z-index: 1;
-            top: 15px;
-            right: 15px;
-            text-align: right;
-        }
-
-        .chat-screen .chat-input .input-action-icon a {
-            display: inline-block;
-            margin-left: 5px;
-            cursor: pointer;
-        }
-
-        .chat-screen .chat-input .input-action-icon a svg {
-            height: 17px;
-            width: 17px;
-            color: #a9a9a9;
-        }
-
-        .chat-bot-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            height: 50px;
-            width: 50px;
-            background-image: linear-gradient(to right, #01579B, #0277bd, #0288D1, #039BE5, #03A9F4);
-            z-index: 9999;
-            border-radius: 30px;
-            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            line-height: 50px;
-            cursor: pointer;
-            transition: all 0.5s ease;
-        }
-
-        .chat-bot-icon img {
-            height: 90px;
-            width: 90px;
-            position: absolute;
-            right: -13px;
-            top: -33px;
-        }
-
-        .chat-bot-icon svg {
-            color: #fff;
-            -moz-transition: all 0.5s linear;
-            -webkit-transition: all 0.5s linear;
-            transition: transform 0.5s linear;
-            position: absolute;
-            left: 13px;
-            top: 13px;
-            opacity: 0;
-            z-index: -1;
-        }
-
-        .chat-bot-icon svg.animate {
-            -moz-transform: rotate(360deg);
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-            opacity: 1;
-            z-index: 1;
-        }
-
-        :focus {
-            outline: none;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -240,21 +29,17 @@
 
         <!-- <div class="chat-body hide" id="chatbox"> -->
         <div class="chat-body " id="chatbox">
-<<<<<<< HEAD
             <p class="chat-bubble you"><span>Hello Im University Bot How can I help you?</span>
-                <br><button onclick='buttonAction(this)'>Administrative information</button>
-                <br><button onclick='buttonAction(this)'>Program details</button>
-                <br><button onclick='buttonAction(this)'>Department details</button>
-                <br><button onclick='buttonAction(this)'>College Details</button>
+                <button onclick='buttonAction(this)'>Administrative information</button>
+                <button onclick='buttonAction(this)'>Program details</button>
+                <button onclick='buttonAction(this)'>Department details</button>
+                <button onclick='buttonAction(this)'>College Details</button>
             </p>
-=======
->>>>>>> 910cd5d7bd9c91fa0bcc7063ab150a51104d86cd
         </div>
         <!-- <div class="chat-input hide"> -->
         <div class="chat-input ">
             <input type="text" placeholder="Type a message..." id="input_msg">
             <div class="input-action-icon">
-                <!-- <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg></a> -->
                 <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="feather feather-send" id="send_button">
@@ -281,66 +66,12 @@
 
     <script>
 
-        var userMessages = [];
-        var botMessages = [];
-
-        if (sessionStorage.count) {
-            for (let i = 0; i <= Number(sessionStorage.count); i++) {
-                $("#chatbox").append(sessionStorage.getItem(i));
-            }
-        }
-
-        function getBotReply() {
-            var inp_msg = $('#input_msg').val();
-            var userHtml = '<p class="chat-bubble me"><span>' + inp_msg + "</span></p>";
-            $("#input_msg").val("");
-            $("#chatbox").append(userHtml);
-
-            userMessages.push(userHtml);
-
-            $.get("/get", { msg: inp_msg }, function (data) {
-
-                var botHtml = '<p class="chat-bubble you"><span>' + data + "</span></p>";
-
-                $("#chatbox").append(botHtml);
-                botMessages.push(botHtml);
-
-                if (sessionStorage.count) {
-                    sessionStorage.count = Number(sessionStorage.count) + 1;
-                }
-                else {
-                    sessionStorage.count = 0;
-                }
-
-                sessionStorage.setItem(sessionStorage.count, userHtml);
-                sessionStorage.count = Number(sessionStorage.count) + 1;
-
-                sessionStorage.setItem(sessionStorage.count, botHtml);
-
-                $('#chatbox').scrollTop((Number(sessionStorage.count) * 2) * 100);
-
-            });
-
-        }
-
-        $("#send_button").click(getBotReply);
-
-        $("#input_msg").keypress(function (e) {
-
-            if (e.which == 13) {
-                getBotReply();
-            }
-
-        });
-
-
     </script>
 
 
     <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js"
         data-cf-settings="257be86a981729866f2fa61c-|49" defer=""></script>
-    <!-- Time line Html Ends -->
-    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -350,37 +81,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <!-- <script src="js/select2.min.js"></script> -->
-
-    <!-- <script>
-        $(document).ready(function () {
-            $(".select2_el").select2({
-            });
-        });
-    </script>  -->
 
     <script>
-        $(document).ready(function () {
-            //Toggle fullscreen
-            $(".chat-bot-icon").click(function (e) {
-                //$(this).children('img').toggleClass('hide');
-                $(this).children('svg').toggleClass('animate');
-                $('.chat-screen').toggleClass('show-chat');
-            });
-            $('.chat-mail button').click(function () {
-                //$('.chat-mail').addClass('hide');
-                //$('.chat-body').removeClass('hide');
-                //$('.chat-input').removeClass('hide');
-                //$('.chat-header-option').removeClass('hide');
-            });
-            $('.end-chat').click(function () {
-                //$('.chat-body').addClass('hide');
-                //$('.chat-input').addClass('hide');
-                //$('.chat-session-end').removeClass('hide');
-                //$('.chat-header-option').addClass('hide');
-            });
-        });
-
+        
     </script>
 
 </body>

@@ -1,0 +1,217 @@
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: #fafafa;
+    color: #787878;
+}
+
+body span a:link{
+    color: rgb(60, 255, 0);
+}
+
+.buttonLink a:link{
+    color: black;
+}
+
+.buttonLink a:visited{
+    color: blue;
+}
+
+body span a:visited{
+    color: rgb(217, 255, 0);
+}
+
+
+.chat-screen {
+    position: fixed;
+    bottom: 68px;
+    right: 20px;
+    z-index: 9999;
+    width: 350px;
+    background: #fff;
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+    visibility: hidden;
+}
+
+.chat-screen.show-chat {
+    -moz-transition: bottom 0.5s linear;
+    -webkit-transition: bottom 0.5s linear;
+    transition: bottom 0.5s linear;
+    visibility: visible;
+    bottom: 82px;
+}
+
+.chat-screen .chat-header {
+    background-image: linear-gradient(to right, #01579B, #0277bd, #0288D1, #039BE5, #03A9F4);
+    border-radius: 15px 15px 0 0;
+    padding: 15px;
+    display: block;
+}
+
+.chat-screen .chat-header .chat-header-title {
+    display: inline-block;
+    width: calc(100% - 50px);
+    color: #fff;
+    font-size: 14px;
+}
+
+.chat-screen .chat-body {
+    padding: 25px;
+    display: inline-block;
+    min-height: 382px;
+    max-height: 382px;
+    /* background: #ecebeb; */
+    background-image: url(../imgs/apple-icon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+    width: 100%;
+    
+}
+
+
+.chat-screen .chat-body .chat-start {
+    border: 1px solid #f8d4ff;
+    width: 150px;
+    border-radius: 50px;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 15px;
+    background: #fff;
+}
+
+.chat-screen .chat-body .chat-bubble {
+    font-size: 14px;
+    padding: 8px 13px;
+    box-shadow: none;
+    display: inline-block;
+    clear: both;
+    margin-bottom: 8px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.02);
+}
+
+.chat-screen .chat-body .chat-bubble.you {
+    background-image: linear-gradient(to right, #01579B, #0277bd, #0288D1, #039BE5, #03A9F4);
+    color: #fff;
+    border-radius: 0 8px 8px 8px;
+    align-self: flex-start;
+    display: table;
+    border: 1px solid black;
+}
+
+.chat-screen .chat-body .chat-bubble.me {
+    background-image: linear-gradient(to right, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF, #FFFFFF);
+    color: black;
+    border-radius: 8px 0px 8px 8px;
+    float: right;
+    align-self: flex-end;
+    display: table;
+    border: 1px solid black;
+}
+
+
+.chat-screen .chat-input {
+    width: 100%;
+    position: relative;
+    margin-bottom: -5px;
+}
+
+.chat-screen .chat-input input {
+    width: 100%;
+    background: #ffffff;
+    padding: 15px 70px 15px 15px;
+    border-radius: 0 0 15px 15px;
+    resize: none;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #f8f8f8;
+    color: black;
+    font-weight: normal;
+    font-size: 13px;
+    transition: border-color 0.5s ease;
+}
+
+.chat-screen .chat-input input:focus {
+    border-color: #f9dcff;
+}
+
+.chat-screen .chat-input input:focus+.input-action-icon a svg.feather-send {
+    color: #0277bd;
+}
+
+.chat-screen .chat-input .input-action-icon {
+    width: 61px;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 1;
+    top: 15px;
+    right: 15px;
+    text-align: right;
+}
+
+.chat-screen .chat-input .input-action-icon a {
+    display: inline-block;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.chat-screen .chat-input .input-action-icon a svg {
+    height: 17px;
+    width: 17px;
+    color: #a9a9a9;
+}
+
+.chat-bot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 50px;
+    width: 50px;
+    background-image: linear-gradient(to right, #01579B, #0277bd, #0288D1, #039BE5, #03A9F4);
+    z-index: 9999;
+    border-radius: 30px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.chat-bot-icon img {
+    height: 90px;
+    width: 90px;
+    position: absolute;
+    right: -13px;
+    top: -33px;
+}
+
+.chat-bot-icon svg {
+    color: #fff;
+    -moz-transition: all 0.5s linear;
+    -webkit-transition: all 0.5s linear;
+    transition: transform 0.5s linear;
+    position: absolute;
+    left: 13px;
+    top: 13px;
+    opacity: 0;
+    z-index: -1;
+}
+
+.chat-bot-icon svg.animate {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    opacity: 1;
+    z-index: 1;
+}
+
+:focus {
+    outline: none;
+}

@@ -1,24 +1,24 @@
-general_admin_conversation = [
+general_conversation = [
     'Administrative information',
-    "Choose from below. <br><button onclick='buttonAction(this)'>Chancellor</button><br><button onclick='buttonAction(this)'>Vice-Chancellor</button><br><button onclick='buttonAction(this)'>Finance Officer</button><br><button onclick='buttonAction(this)'>Registrar</button>",
+    "Choose from below. <button onclick='buttonAction(this)'>Chancellor</button><button onclick='buttonAction(this)'>Vice-Chancellor</button><button onclick='buttonAction(this)'>Finance Officer</button><button onclick='buttonAction(this)'>Registrar</button>",
 
     'Chancellor',
-    "Bhagat Singh Koshyari<img src='/uploads/leadership/bhagat-singh-koshyari_leadership_2320200907.141316.jpg' alt='contact Us'> <a href='about-us/leadership/chancellor.html'target='_blank'> Click here </a> for more info",
+    "Bhagat Singh Koshyari<img src='../../uploads/leadership/bhagat-singh-koshyari_leadership_2320200907.141316.jpg' alt='contact Us'> <a href='about-us/leadership/chancellor.html'target='_blank'> Click here </a> for more info",
 
     'Vice-Chancellor',
-    "Varun Sahni.<img src='/uploads/leadership/varun-sahni_pic_220171225.0717.jpg' alt='Contact Us'> <a href='about-us/leadership/vicechancellor.html'target='_blank'> Click here </a> for more info",
+    "Varun Sahni.<img src='../../uploads/leadership/varun-sahni_pic_220171225.0717.jpg' alt='Contact Us'> <a href='about-us/leadership/vicechancellor.html'target='_blank'> Click here </a> for more info",
     
     'Registrar',
-    "Radhika Nayak <img src='/uploads/leadership/radhika-nayak_leadership_2420201214.084052.jpg' alt='Image of Registrar'>  <a href='about-us/leadership/registrar.html'target='_blank'> Click here </a> for more info",
+    "Radhika Nayak <img src='../../uploads/leadership/radhika-nayak_leadership_2420201214.084052.jpg' alt='Image of Registrar'>  <a href='about-us/leadership/registrar.html'target='_blank'> Click here </a> for more info",
     
-    'Finance Officer'
-    "Ramesh V. Pai <img src='/uploads/leadership/ramesh-v-pai_leadership_1420190823.145643.jpg' alt='Image of Registrar'>  <a href='about-us/leadership/finance-officer.html'target='_blank'> Click here </a> for more info",
+    'Finance Officer',
+    "Ramesh V. Pai <img src='../../uploads/leadership/ramesh-v-pai_leadership_1420190823.145643.jpg' alt='Image of Registrar'>  <a href='about-us/leadership/finance-officer.html'target='_blank'> Click here </a> for more info",
     
 ]
 chancellor_conversation = [
     'Who is the Chancellor of goa university?',
-    "The chancellor of Goa University is Bhagat Singh Koshyari.<img src='/uploads/leadership/bhagat-singh-koshyari_leadership_2320200907.141316.jpg' alt='contact Us'> <a href='about-us/leadership/chancellor.html' \
-                > Click here </a> for more info",
+    "The chancellor of Goa University is Bhagat Singh Koshyari.<img src='../../uploads/leadership/bhagat-singh-koshyari_leadership_2320200907.141316.jpg' alt='contact Us'> <a href='about-us/leadership/chancellor.html' \
+                target='_blank'> Click here </a> for more info",
     
     'Email of chancellor?',
     'Chancellors email is governor@rajbhavangoa.org ',
@@ -34,7 +34,7 @@ chancellor_conversation = [
 
     'Give some information about the chancellor',
     "The chancellor of Goa University is Bhagat Singh Koshyari. <a href='about-us/leadership/chancellor.html' \
-                > Click here </a> for more info",
+                target='_blank'> Click here </a> for more info",
 
     'Who is Bhagat Singh Koshiyari?',
     'Hes the Chencellor of Goa University'
@@ -42,8 +42,8 @@ chancellor_conversation = [
 
 vice_chancellor_conversation = [
     'Who is the Vice-Chancellor of goa university?',
-    "The Vice-Chancellor of Goa University is Varun Sahni.<img src='/uploads/leadership/varun-sahni_pic_220171225.0717.jpg' alt='Contact Us'> <a href='about-us/leadership/vicechancellor.html' \
-                > Click here </a> for more info",
+    "The Vice-Chancellor of Goa University is Varun Sahni.<img src='../../uploads/leadership/varun-sahni_pic_220171225.0717.jpg' alt='Contact Us'> <a href='about-us/leadership/vicechancellor.html' \
+                target='_blank'> Click here </a> for more info",
     
     'Email of chancellor?',
     'Chancellors email is vc@unigoa.ac.in ',
@@ -60,7 +60,7 @@ vice_chancellor_conversation = [
 
     'Give some information about the chancellor',
     "The chancellor of Goa University is Bhagat Singh Koshyari. <a href='about-us/leadership/vicechancellor.html' \
-                > Click here </a> for more info",
+                target='_blank'> Click here </a> for more info",
 
     'Who is Varun Sahni',
     'Hes the Vice-Chencellor of Goa University'
@@ -127,8 +127,8 @@ dean_conversation = [
 registrar_conversation = [
     
     'Who is the registrar of goa university?',
-    "Radhika Nayak is the officiating registrar of Goa University.<img src='/uploads/leadership/radhika-nayak_leadership_2420201214.084052.jpg' alt='Image of Registrar'>  <a href='about-us/leadership/registrar.html' \
-                > Click here </a> for more info",
+    "Radhika Nayak is the officiating registrar of Goa University.<img src='../../uploads/leadership/radhika-nayak_leadership_2420201214.084052.jpg' alt='Image of Registrar'>  <a href='about-us/leadership/registrar.html' \
+                target='_blank'> Click here </a> for more info",
 
     'Who is the registrar?',
     'Radhika Nayak is the officiating registrar of Goa University',
@@ -141,14 +141,14 @@ registrar_conversation = [
 
     'who is Radhika Nayak?',
     "Radhika Nayak is the Registrar of Goa University. <a href='about-us/leadership/registrar.html' \
-                > Click here </a> for more info"
+                target='_blank'> Click here </a> for more info"
 
 ]
 
-finance_officer_concersation = [
+finance_officer_conversation = [
     'Who is the Finance Officer of goa university?',
-    "Ramesh V. Pai is the Finance Officer of Goa University.<img src='/uploads/leadership/ramesh-v-pai_leadership_1420190823.145643.jpg' alt='Image of Registrar'>  <a href='about-us/leadership/finance-officer.html' \
-                > Click here </a> for more info",
+    "Ramesh V. Pai is the Finance Officer of Goa University.<img src='../../uploads/leadership/ramesh-v-pai_leadership_1420190823.145643.jpg' alt='Image of Registrar'>  <a href='about-us/leadership/finance-officer.html' \
+                target='_blank'> Click here </a> for more info",
 
     'Who is the finance officer?',
     'Ramesh V. Pai is the finance officer of Goa University',
@@ -161,5 +161,5 @@ finance_officer_concersation = [
 
     'who is Ramesh V. Pai?',
     "Ramesh V. Pai is the Registrar of Goa University. <a href='about-us/leadership/finance-officer.html' \
-                > Click here </a> for more info"
+                target='_blank'> Click here </a> for more info"
 ]

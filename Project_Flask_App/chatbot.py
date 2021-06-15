@@ -7,12 +7,10 @@ import os
 
 #import conversations
 
-from greetings_convers import general_conversation
-
-from admin_conversation import chancellor_conversation, dean_conversation, vice_chancellor_conversation, registrar_conversation, general_admin_conversation
+from admin_conversation import chancellor_conversation, dean_conversation, vice_chancellor_conversation, registrar_conversation, general_conversation,finance_officer_conversation
 
 from greetings_convers import greetings_conversation
-from courses_conserv import courses_conversation, bachelors_courses_conversation,general_course_conversation, \
+from courses_conserv import courses_conversation, bachelors_courses_conversation, \
     master_courses_conversation, mphil_courses_conversation, pgdiploma_courses_conversation, \
     doctoral_courses_conversation
 
@@ -56,18 +54,16 @@ bot = ChatBot(
 trainer = ListTrainer(bot)
 
 #training the chatbot with the greetings_conversation
-trainer.train(general_conversation)
-
 trainer.train(greetings_conversation)
 
-trainer.train(general_admin_conversation)
+trainer.train(general_conversation)
 trainer.train(chancellor_conversation)
 trainer.train(vice_chancellor_conversation)
 trainer.train(registrar_conversation)
 trainer.train(dean_conversation)
+trainer.train(finance_officer_conversation)
 
 #training the chatbot with the courses conservation
-trainer.train(general_course_conversation)
 trainer.train(courses_conversation)
 trainer.train(bachelors_courses_conversation)
 trainer.train(master_courses_conversation)

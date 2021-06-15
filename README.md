@@ -5,7 +5,7 @@ This is a project work for the Web Tech Lab for Semester 4, 2021
 The Goa University Chatbot Using Rasa folder.
 <br/>
 Building a chatbot for University website using rasa nlp library.
-<br/>
+<hr/>
 
 ## Current Version
 Using the chatterbot library in python.
@@ -15,7 +15,7 @@ Using flask for backend.
 
 Python packages that we used:
 <br/>
-1)Chatterbot
+1)chatterbot
 <br/>
 2)flask
 <br/>
@@ -30,7 +30,7 @@ https://drive.google.com/drive/folders/1ow98IeMDksYGbL_cpeGJnIq1tdb7ZsaU?usp=sha
 The same can also be clone using web scraping tools such as Httrack.
 <br/>
 
-Place the downloaded folder in the parent folder outside the Project_Flask_App folder.
+Place the downloaded folder in the Project_Flask_App folder of this repo.
 <br/>
 
 The directory tree should be something like this: <br/>
@@ -39,7 +39,8 @@ The directory tree should be something like this: <br/>
 		
 		->Project_Flask_App\
 		
-		->Chatbot, this is the folder containing the cloned website\
+			->University_website_folder, this is the folder containing the cloned website\
+			->Other files and folders\
 		
 		->Other files and folders\
 
@@ -47,7 +48,20 @@ The directory tree should be something like this: <br/>
 If this tree is not maintained, then additional configurations need to be done for static file path in flask app, i.e the app.py file.
 
 <br/>
-The static_path = '../Website/Unigoa_website_clone/www.unigoa.ac.in/' path should be properly configured.
+The static_path = 'university/www.unigoa.ac.in' path should be properly configured.
 <br/>
 Otherwise rendering issues for css, js and other files for the cloned website does not work properly.
+<br/>
+
+Place the chatbot_template folder, containing chatbot template and static files, inside the cloned university
+website, i.e. inside the university/www.unigoa.ac.in/ folder and make necessary changes so that the chatbot 
+template is displayed on all the university web pages.
+<br/>
+
+To run the flask app, type the command in the terminal:
+	- python chatbot.py
+This will train the chatterbot and store the conversations in db, file based, and also run the flask server.
+<br/>
+
+Thanks!
 

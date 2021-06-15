@@ -48,7 +48,7 @@ department_conversation = [
     
     'All Departments',
     "You can check out the information of all the departments from here: \
-        <a href='goa-university-department-listings.html'> Goa University Departments and Schools </a> ",
+        <a href='/goa-university-department-listings.html'> Goa University Departments and Schools </a> ",
 
     # chemical sciences
     'Give information of school of chemical sciences',

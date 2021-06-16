@@ -13,14 +13,7 @@ general_course_conversation = [
     #         <button onclick='buttonAction(this)'>Finance Officer</button><br>\
     #             <button onclick='buttonAction(this)'>Registrar</button>",
 
-    'Programs',
-        "Choose from below. <br><button onclick='buttonAction(this)'>Bachelors</button><br>\
-            <button onclick='buttonAction(this)'>Masters</button><br>\
-                <button onclick='buttonAction(this)'>Post Graduate in Diploma</button><br>\
-                    <button onclick='buttonAction(this)'>MPhil</button>",
-
-
-    'Program details',
+    'Program Details',
     "Choose from below. <br><button onclick='buttonAction(this)'>Bachelors</button><br>\
         <button onclick='buttonAction(this)'>Masters</button><br>\
             <button onclick='buttonAction(this)'>Post Graduate in Diploma</button><br>\

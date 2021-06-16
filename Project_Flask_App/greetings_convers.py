@@ -17,7 +17,7 @@ general_conversation = [
     
     'what can you do?',
     "What would you like to know?<br><button onclick='buttonAction(this)'>Administrative information</button>\
-        <br><button onclick='buttonAction(this)'>Programs</button>\
+        <br><button onclick='buttonAction(this)'>Program Details</button>\
             <br><button onclick='buttonAction(this)'>Departments</button>\
                 <br><button onclick='buttonAction(this)'>Colleges</button>",
 

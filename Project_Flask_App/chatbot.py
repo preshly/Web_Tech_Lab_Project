@@ -17,7 +17,7 @@ from greetings_convers import greetings_conversation
 # general_course_conversation
 from courses_conserv import courses_conversation, bachelors_courses_conversation,\
     master_courses_conversation, mphil_courses_conversation, pgdiploma_courses_conversation, \
-    doctoral_courses_conversation
+    doctoral_courses_conversation, general_course_conversation
 
 from department_convers import department_conversation
 from examination_conv import apply_for_conversations, convocation_conversations
@@ -61,7 +61,7 @@ bot = ChatBot(
         {
             'import_path': 'chatterbot.logic.BestMatch',
             'default_response': 'I am sorry, but I do not understand.',
-            'maximum_similarity_threshold': 0.99
+            'maximum_similarity_threshold': 0.90
         }
     ]
 )
@@ -79,6 +79,7 @@ trainer.train(professional_edu_institution_convo)
 trainer.train(recognised_edu_institution_convo)
 
 trainer.train(general_conversation)
+trainer.train(general_course_conversation)
 trainer.train(chancellor_conversation)
 trainer.train(vice_chancellor_conversation)
 trainer.train(registrar_conversation)

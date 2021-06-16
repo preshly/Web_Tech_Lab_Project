@@ -8,6 +8,15 @@
 
 
 department_conversation = [
+
+    'Departments',
+    "There are 22 departments in the University. Choose from below: \
+        <br /> <button type='button' onClick='buttonAction(this) '> Botany </button> \
+        <br /> <button type='button' onClick='buttonAction(this) '> French </button> \
+        <br /> <button type='button' onClick='buttonAction(this) '> GBS </button> \
+        <br /> <button type='button' onClick='buttonAction(this) '> Hindi </button> \
+        <br /> <button type='button' onClick='buttonAction(this) '> All Departments </button>",
+
     'Give some information about the departments in the University',
     "There are 22 departments in the University. Choose from below: \
         <br /> <button type='button' onClick='buttonAction(this) '> Botany </button> \

@@ -39,7 +39,7 @@ body span a:visited{
     box-sizing: border-box;
     border-radius: 15px;
     visibility: hidden;
-    box-shadow: 0px 15px 15px rgb(73, 74, 73);
+    box-shadow: 0 0 5px 10px hsl(0, 0%, 41%);
 }
 
 .chat-screen.show-chat {
@@ -93,7 +93,7 @@ body span a:visited{
 
 
 
-.chat-screen .chat-body img{
+.chat-screen .chat-body .body-bg-img{
     position: fixed;
     opacity: 0.6;
     background-position: top left;

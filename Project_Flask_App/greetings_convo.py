@@ -1,40 +1,39 @@
 
-"""
-    {"tag": "",
-        "patterns": ["",],
-        "responses": ["", ],
-    
-    },
-"""
+#############################
+#                           #
+##        greetings        ##
+##      conversations      ##
+#                           #
+#############################
 
 
 greetings_intents = {"intents": [
     {"tag": "greet",
-        "patterns": ["Hello", "Hi", "Hi there", "hi there","Anyone there", "anyone home", "whats up"],
+        "patterns": ["hello", "hi", "anyone home"],
         "responses": ["Hi there! What can I do for you?", "Hi! How can I help you?", ]
     
     },
 
     {"tag": "about_well_being",
-        "patterns": ["How are you doing?", "How are you", "Are you ok", "Are you fine"],
+        "patterns": ["how are you doing", "how are you"],
         "responses": ["I'm doing great.", "I'm fine", "Appreciate you asked. I'm fine", "I'm good", ],
     
     },
 
     {"tag": "appreciate",
-        "patterns": ["That is good to hear", "cool", "awesome", "nice"],
+        "patterns": ["good", "thanks", "thank", "cool", "awesome", "nice"],
         "responses": ["Thank you", "Thanks"],
     
     },
 
     {"tag": "goodbye",
-        "patterns": ["Good Bye", "good bye", "bye", "I have to go", "I'm leaving", "I have to leave"],
+        "patterns": ["good bye", "bye", "leaving"],
         "responses": ["Good Bye", "Bye", "See you soon", ],
     
     },
 
     {"tag": "what_can_you_do",
-        "patterns": ["what can you do", "what else can you do" ,"How can you help me" ],
+        "patterns": ["what can you do", "help" ],
         "responses": ["What would you like to know? <br> \
             <button onclick='buttonAction(this)'>Administrative information</button>\
             <br><button onclick='buttonAction(this)'>Program details</button>\

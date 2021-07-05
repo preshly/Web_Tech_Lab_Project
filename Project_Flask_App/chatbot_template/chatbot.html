@@ -18,23 +18,27 @@
 <body>
 
     <!-- chatbot ui -->
-    <div class="chat-screen">
-        <div class="chat-header">
+    <div class="chat-screen" >
+        <div class="chat-header d-flex flex-row">
+            <img src="https://img.icons8.com/ios/100/000000/bot.png"/>
             <div class="chat-header-title">
                 What can I help you with?
             </div>
-
         </div>
 
 
-        <!-- <div class="chat-body hide" id="chatbox"> -->
-        <div class="chat-body " id="chatbox">
-            <p class="chat-bubble you "><span>Hello I am the University Bot How can I assist you?</span>
-                <br><button type="button" class="btn btn-info custom" onclick='buttonAction(this)'>Administrative information</button>
-                <br><button type="button" class="btn btn-info custom" onclick='buttonAction(this)'>Programs</button>
-                <br><button type="button" class="btn btn-info custom" onclick='buttonAction(this)'>Departments</button>
-                <br><button type="button" class="btn btn-info custom" onclick='buttonAction(this)'>Colleges</button>
-            </p>
+        <!-- <div class="chat-body hide" > -->
+        <div class="chat-body"  >
+            <div class="chat-body-wrapper" id="chatbox">
+                <img class="body-bg-img" src="../imgs/apple-icon.png" alt="logo" > 
+                <p class="chat-bubble you "><span>Hello I am the University Bot How can I assist you?</span>
+                    <br><button type="button" class="btn btn-info custom" onclick='buttonAction(this)'>Administrative information</button>
+                    <br><button type="button" class="btn btn-info custom" onclick='buttonAction(this)'>Program details</button>
+                    <br><button type="button" class="btn btn-info custom" onclick='buttonAction(this)'>Department details</button>
+                    <br><button type="button" class="btn btn-info custom" onclick='buttonAction(this)'>College Details</button>
+                </p>
+            </div>
+            
         </div>
         <!-- <div class="chat-input hide"> -->
         <div class="chat-input ">

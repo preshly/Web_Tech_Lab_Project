@@ -13,8 +13,8 @@ import pickle
 
 import re
 
-from nltk_hostel_convo import hostel_intents
-from nltk_greetings_convo import greetings_intents
+from hostel_convo import hostel_intents
+from greetings_convo import greetings_intents
 from academic_matter_conv import academic_intents, migration_intents, transcripts_intents
 
 
@@ -33,6 +33,8 @@ class Nltk_Convo:
         self.punctuations = re.compile(r"[-_?!:;,.|@#$%^&*<>\\/()'0-9]")
 
         self.word_lematizer = WordNetLemmatizer()
+
+        self.build_db()
 
     def remove_punctuations(self, words_tokens):
         '''
@@ -100,12 +102,12 @@ class Nltk_Convo:
             return the chatbot response.
         '''
 
-        try:
-            # goToExcept if no database, i.e. data.pickle file
-            with open("data.pickle", "rb") as f:
-                self.words, self.labels, self.docs_x, self.docs_y = pickle.load(f)
-        except Exception as e:
-            self.build_db()
+        # try:
+        #     # goToExcept if no database, i.e. data.pickle file
+        #     with open("data.pickle", "rb") as f:
+        #         self.words, self.labels, self.docs_x, self.docs_y = pickle.load(f)
+        # except Exception as e:
+        #     self.build_db()
 
         input_tokens = word_tokenize(given_input)
         input_tokens_puncs = self.remove_punctuations(input_tokens)
@@ -201,6 +203,7 @@ class Nltk_Convo:
 #try in terminal
 if __name__ == '__main__':
     cl = Nltk_Convo()
+    
     while True:
         inp = input('You: ')
         if inp == 'bye':

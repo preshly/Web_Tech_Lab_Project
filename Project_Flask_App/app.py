@@ -9,6 +9,7 @@ except:
 	print('No database found. Creating new database.')
 
 bot = Nltk_Convo()
+bot.chat_response('hi') #to remove extra time needed for bot response for first user message.
 
 files = os.listdir('saved_conversations')
 files = [int(f) for f in files]

@@ -56,7 +56,7 @@ function getBotReply(input) {
 
         sessionStorage.setItem(sessionStorage.count, botHtml);
 
-        $('#chatbox').scrollTop((Number(sessionStorage.count) * 2) * 100);
+        $('#scroll').scrollTop((Number(sessionStorage.count) * 2) * 100);
 
     });
 
@@ -85,3 +85,4 @@ $("#input_msg").keypress(function (e) {
     }
 
 });
+

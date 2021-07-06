@@ -78,8 +78,8 @@ body span a:visited{
     min-height: 382px;
     max-height: 382px;
     background-size: 400px;
-    overflow-y: scroll;
     width: 100%;
+    overflow-y: scroll;
       
 }
 
@@ -89,6 +89,7 @@ body span a:visited{
     padding: 25px;
     width: 100%;
     height: 100%;
+    
 }
 
 
@@ -149,8 +150,8 @@ body span a:visited{
 }
 
 .chat-screen .chat-body .chat-bubble.me {
-    background: rgb(179, 240, 129);
-    color: black;
+    background: rgb(107, 109, 107);
+    color: white;
     border-radius: 15px 0px 15px 15px;
     float: right;
     align-self: flex-end;

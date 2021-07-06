@@ -39,7 +39,7 @@ body span a:visited{
     box-sizing: border-box;
     border-radius: 15px;
     visibility: hidden;
-    box-shadow: 0 0 5px 10px hsl(0, 0%, 41%);
+    box-shadow: 0 3px 5px 8px hsl(0, 0%, 60%);
 }
 
 .chat-screen.show-chat {
@@ -55,12 +55,15 @@ body span a:visited{
     border-radius: 15px 15px 0 0;
     padding: 15px;
     /* display: block; */
+    border-bottom: 5px black;
+    border-bottom-style:inset;
     
 }
 
 .chat-screen .chat-header img{
     height: 40px;
     width: 50px;
+
 }
 
 .chat-screen .chat-header .chat-header-title {
@@ -81,6 +84,10 @@ body span a:visited{
     width: 100%;
     overflow-y: scroll;
       
+}
+
+.chat-screen .chat-body img {
+    margin-left: 15px;
 }
 
 .chat-screen .chat-body .chat-body-wrapper{
@@ -226,6 +233,7 @@ body span a:visited{
     line-height: 50px;
     cursor: pointer;
     transition: all 0.5s ease;
+    box-shadow: 0 0 5px 5px hsl(0, 0%, 65%);
 }
 
 .chat-bot-icon img {
@@ -246,6 +254,7 @@ body span a:visited{
     top: 13px;
     opacity: 0;
     z-index: -1;
+
 }
 
 .chat-bot-icon svg.animate {
@@ -254,5 +263,11 @@ body span a:visited{
     transform: rotate(360deg);
     opacity: 1;
     z-index: 1;
+}
+
+@media only screen and (max-width: 450px) {
+    .chat-screen{
+        width: 85vw;
+    }
 }
 

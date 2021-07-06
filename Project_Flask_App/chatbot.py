@@ -17,14 +17,15 @@ from hostel_convo import hostel_intents
 from greetings_convo import greetings_intents
 from contact_conv import contact_intents
 from contact_conv import email_intents
-from college_convo import general_college_intents
+# from college_convo import general_college_intents
 from academic_matter_conv import academic_intents, migration_intents, transcripts_intents
+from admin_conversation import general_admin_intents, chancellor_intents, vice_chancellor_intents, dean_intents, registrar_intents, finance_officer_intents
 
 
 class Nltk_Convo:
 
     def __init__(self) -> None:
-        self.all_data = [hostel_intents, greetings_intents, academic_intents, migration_intents, transcripts_intents, contact_intents,email_intents,general_college_intents]
+        self.all_data = [hostel_intents, greetings_intents, academic_intents, migration_intents, transcripts_intents, contact_intents,email_intents, general_admin_intents, chancellor_intents, vice_chancellor_intents, dean_intents, registrar_intents, finance_officer_intents]
         self.words = []
         self.labels = []
         self.docs_x = []

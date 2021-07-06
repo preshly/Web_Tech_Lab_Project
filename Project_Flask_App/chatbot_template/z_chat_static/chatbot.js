@@ -14,7 +14,7 @@ var botMessages = [];
 
 if (sessionStorage.count) {
     for (let i = 0; i <= Number(sessionStorage.count); i++) {
-        $("#chatbox").append(sessionStorage.getItem(i));
+        $("#chatbox").innerHTML = sessionStorage.getItem(i)
     }
 }
 
@@ -56,7 +56,7 @@ function getBotReply(input) {
 
         sessionStorage.setItem(sessionStorage.count, botHtml);
 
-        $('#scroll').scrollTop((Number(sessionStorage.count) * 2) * 100);
+        $('#scroll').scrollTop((Number(sessionStorage.count) * 2) * 1000);
 
     });
 

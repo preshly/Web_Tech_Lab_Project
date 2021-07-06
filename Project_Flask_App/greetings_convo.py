@@ -6,6 +6,7 @@
 #                           #
 #############################
 
+from datetime import datetime
 
 greetings_intents = {"intents": [
     {"tag": "greet",
@@ -41,5 +42,17 @@ greetings_intents = {"intents": [
             <br><button onclick='buttonAction(this)'>College Details</button> " ],
     
     },
+
+    {"tag": "today_date",
+        "patterns": ["today date", "date today", "date"],
+        "responses": [ str( datetime.now().date() ) ],
+    
+    },
+    {"tag": "time_now",
+        "patterns": ["time", "current time"],
+        "responses": [ str( datetime.now().time().strftime('%H:%M:%S') ) ],
+    
+    },
+
 ]
 }

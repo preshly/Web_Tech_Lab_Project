@@ -19,19 +19,31 @@ import numpy
 import random
 import json
 import pickle
-
 import re
+from datetime import datetime
 
 from hostel_convo import hostel_intents
 from greetings_convo import greetings_intents
+from contact_conv import contact_intents,email_intents
+from college_convo import general_college_intents,professional_edu_institution_intents,general_edu_institution_intents, \
+    recognised_edu_institution_intents
 from academic_matter_conv import academic_intents, migration_intents, transcripts_intents
+from admin_conversation import general_admin_intents, chancellor_intents, vice_chancellor_intents, \
+    dean_intents, registrar_intents, finance_officer_intents
+from admission_convo import admission_notices_converstion
+from department_convo import department_conversation
+from examination_conv import apply_for_conversations, convocation_conversations
 
 
 class Nltk_Convo:
 
     def __init__(self) -> None:
-        self.all_data = [greetings_intents, hostel_intents, academic_intents, migration_intents, 
-            transcripts_intents ]
+        self.all_data = [hostel_intents, greetings_intents, academic_intents, migration_intents, transcripts_intents, 
+            contact_intents,email_intents, general_college_intents, general_edu_institution_intents,
+            professional_edu_institution_intents,recognised_edu_institution_intents, general_admin_intents, chancellor_intents, 
+            vice_chancellor_intents, dean_intents, registrar_intents, finance_officer_intents,
+            admission_notices_converstion, department_conversation, apply_for_conversations, convocation_conversations]
+        
 
         self.labels = []
         self.labels_keywords = []

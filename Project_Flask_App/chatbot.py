@@ -24,6 +24,7 @@ from admin_conversation import general_admin_intents, chancellor_intents, vice_c
 from admission_convo import admission_notices_converstion
 from department_convo import department_conversation
 from examination_conv import apply_for_conversations, convocation_conversations
+from courses_convers import general_course_intents, courses_intents, bachelors_courses_intents, master_courses_intents
 
 
 class Nltk_Convo:
@@ -33,7 +34,9 @@ class Nltk_Convo:
             contact_intents,email_intents, general_college_intents, general_edu_institution_intents,
             professional_edu_institution_intents,recognised_edu_institution_intents, general_admin_intents, chancellor_intents, 
             vice_chancellor_intents, dean_intents, registrar_intents, finance_officer_intents,
-            admission_notices_converstion, department_conversation, apply_for_conversations, convocation_conversations,]
+            admission_notices_converstion, department_conversation, apply_for_conversations, convocation_conversations,
+            general_course_intents, courses_intents, bachelors_courses_intents, master_courses_intents
+]
         
         self.words = []
         self.labels = []

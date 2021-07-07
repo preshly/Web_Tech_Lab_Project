@@ -203,6 +203,14 @@ class Nltk_Convo:
                     print(perc_user_input_index)
                     response = random.choice(responses)
         
+        if(response == "I am sorry, but I do not understand."):
+            response = response+ "<br><span>How can I assist you?</span>\
+                <br><button type='button' class='btn btn-info custom' onclick='buttonAction(this)'>Administrative information</button>\
+                <br><button type='button' class='btn btn-info custom' onclick='buttonAction(this)'>Program details</button>\
+                <br><button type='button' class='btn btn-info custom' onclick='buttonAction(this)'>Department details</button>\
+                <br><button type='button' class='btn btn-info custom' onclick='buttonAction(this)'>College Details</button>\
+                "
+
         return response
 
     def find_max_matching_index(self, perc_words):

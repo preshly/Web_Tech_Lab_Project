@@ -1,5 +1,5 @@
 # Web_Tech_Lab_Project
-This is a project work for the Web Tech Lab for Semester 4, 2021
+Project work for the Web Tech Lab for Semester 4, 2021
 
 ## Earlier Version
 The Goa University Chatbot Using Rasa folder.
